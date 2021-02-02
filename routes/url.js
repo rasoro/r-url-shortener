@@ -1,5 +1,5 @@
 const express = require('express');
-const shortid = require('shortid');
+const { nanoid } = require('nanoid');
 const validUrl = require('valid-url');
 
 const Url = require('../models/url');
@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
     return res.status(401).json("Internal error. Please come back later.");
   }
 
-  const code = shortid.generate();
+  const code = nanoid(10);
 
   if(validUrl.isUri(sourceUrl)) {
     try {

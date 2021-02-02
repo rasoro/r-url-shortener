@@ -1,7 +1,5 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const shortid = require('shortid');
-const validUrl = require('valid-url');
 
 require('dotenv').config();
 
